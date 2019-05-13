@@ -1,6 +1,6 @@
 Merge Into [Travel Agency].dbo.HOTEL_DIM as TargetTable
         Using [Baza firmy].dbo.HOTEL as SourceTable
-	      On TargetTable.HotelID = SourceTable.HotelID
+	      On TargetTable.HotelKEY = SourceTable.HotelID
 			When Not Matched 
 				Then -- The ID in the Source is not found the Target
 					INSERT 

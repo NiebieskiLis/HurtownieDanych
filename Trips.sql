@@ -1,6 +1,8 @@
 Merge Into TRIP as TargetTable
-        Using [Baza firmy].dbo.HOTEL as SourceTable
+        Using [Baza firmy].dbo.HOTEL as SourceTable1,[Baza firmy].dbo.HOTEL as SourceTable1
 	      On TargetTable.HotelID = SourceTable.HotelID
+		  Using [Baza firmy].dbo.HOTEL as SourceTable1
+
 			When Not Matched 
 				Then -- The ID in the Source is not found the Target
 					INSERT 

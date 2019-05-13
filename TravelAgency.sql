@@ -13,7 +13,8 @@ DROP TABLE IF EXISTS dbo.TRIP_INFO_DIM;
 
 
 CREATE TABLE HOTEL_DIM (
-	HotelID int PRIMARY KEY,
+	HotelID int IDENTITY(1,1) PRIMARY KEY,
+	HotelKEY int,
 	HotelName varchar(40),
 	HotelType varchar(40),
 	InsertionDate date,
@@ -27,16 +28,18 @@ CREATE TABLE TRIP_INFO_DIM (
 );
 
 CREATE TABLE TRANSPORT_DIM (
-	TransportID int PRIMARY KEY,
-	TransportCompanyName varchar(30),
+	TransportID int IDENTITY(1,1) PRIMARY KEY,
+	TransportKEY int ,
+	TransportCompanyName varchar(40),
 	TransportType varchar(30),
 	DiscountRange varchar(50)
 );
 
 CREATE TABLE LOCATION_DIM (
-	LocationID int PRIMARY KEY,
+	LocationID int IDENTITY(1,1) PRIMARY KEY,
+	LocationKEY int,
 	City varchar(40),
-	Country varchar(40) 
+	Country varchar(30) 
 );
 
   CREATE TABLE DATE_DIM(
